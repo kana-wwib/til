@@ -1,0 +1,29 @@
+Hoisting（変数の巻き上げ）
+
+Hoisting works as Function declaration
+
+calculateAge(1998); //WORKS
+function calculateAge(year) {
+  console.log(2016 - year);
+}
+
+Hoisting does NOT work as Function expression
+
+retirement(1998);  //ERROR
+var retirement = function(year) {
+  console.log(65 - (2016 - year));
+}
+
+Hoisting set to Undefined as variables
+
+console.log(age); // undefined (know an age variable but don't have value yet)
+var age = 23;
+console.log(age); // works //global context object (age)
+ 
+function foo() {
+  console.log(age) // undefined
+  var age = 65;
+  console.log(age); //execution context object (age)
+}
+foo(); // 65
+console.log(age); // 23
