@@ -25,5 +25,6 @@ function foo() {
   var age = 65;
   console.log(age); //execution context object (age)
 }
+
 foo(); // 65
 console.log(age); // 23
