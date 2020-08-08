@@ -17,6 +17,10 @@ console.log(x);
 
 document.querySelector('.dice').style.display = 'none';
 
+/**NOTE***/
+it's not best way to change in JavaScript, we should not use style property all the time
+Instead, simply add/remove/toggle classes which created in CSS
+
 
 //getElementById
 
