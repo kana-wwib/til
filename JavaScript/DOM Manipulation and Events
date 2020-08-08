@@ -16,3 +16,45 @@ console.log(x);
  *****************************/
 
 document.querySelector('.dice').style.display = 'none';
+
+
+//getElementById
+
+**it works for only ID but faster than querySelector**
+
+document.getElementById('score-0').textContent = '0';
+
+
+/******************************
+ * with function
+ *****************************/
+ 
+//the callback function
+
+function btn() {
+  //Do something here
+}
+btn(); //already call function
+document.querySelector('.btn-roll').addEventListener('click',btn);
+
+//the anonymous function (doesn't have name, can't use outside)
+
+document.querySelector('.btn-roll').addEventListener('click', function() {
+  //Do something here
+});
+
+
+/******************************
+ * toggle / remove / add
+ *****************************/
+ 
+//toggle >> to add the class if it's not there and if it's there, to remove
+document.querySelector('.player-0-panel').classList.toggle('active');
+document.querySelector('.player-1-panel').classList.toggle('active');
+
+//remove >> just remove
+document.querySelector('.player-0-panel').classList.remove('active');
+
+//add >> just add
+document.querySelector('.player-1-panel').classList.add('active');
+
