@@ -1,0 +1,13 @@
+//If statement (much simpler and cleaner)    
+
+activePlayer === 0 ? activePlayer = 1 : activePlayer = 0
+
+=
+
+if(activePlayer === 0) {
+  activePlayer = 1;
+} else {
+  activePlayer = 0;
+}
+
+exact same!
