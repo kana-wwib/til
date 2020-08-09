@@ -2,10 +2,6 @@
 $ git init  >> .git/  .gitディレクトリが作成される
 
 
-//Githubのリモートリポジトリをローカルにコピー
-$ git close <リポジトリ名>
-
-
 //変更をステージに追加する
 $ git add <ファイル名>
 $ git add <ディレクトリ名>
@@ -43,4 +39,25 @@ $ git log -n <コミット数>（最近の分だけ表示）
 　$ git rm -r <ディレクトリ名>
 ファイルを残したい（gitだけ削除）
 　$ git rm --cached <ファイル名>
+ 
+ 
+//ファイル名の変更を記録
+$ git mv 旧ファイル名 新ファイル名
 
+
+//ファイルの変更を取り消す（add前）
+$ git checkout -- ファイル名
+$ git checkout -- ディレクトリ名
+全変更を取り消す
+$ git checkout --
+
+
+ステージしたファイルの変更を取り消す（add後）
+$ git reset HEAD ファイル名
+$ git reset HEAD ディレクトリ名
+全変更を取り消す
+$ git reset HEAD .
+
+
+//直前のコミットを修正する　**リモートにプッシュ後はNG
+$ git commit --amend
