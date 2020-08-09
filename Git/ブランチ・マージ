@@ -1,0 +1,32 @@
+//ブランチを新規作成
+$ git branch ブランチ名
+
+
+//ブランチの一覧を表示
+$ git branch
+
+全て表示
+$ git branch -a
+
+
+//ブランチを切り替える
+$ git checkout 既存ブランチ名
+
+ブランチを新規作成して切り替える場合
+$ git checkout -b 新ブランチ名
+
+
+//変更履歴をマージする
+$ git merge ブランチ名
+$ git merge リモート名/ブランチ名  ($ git merge origin/master)
+
+
+//ブランチ名を変更
+$ git branch -m ブランチ名
+
+
+//ブランチを削除 (masterにマージされていない変更が残っている場合削除しない）
+$ git branch -d ブランチ名
+
+強制削除する場合
+$ git branch -D ブランチ名
