@@ -1,0 +1,12 @@
+
+//Githubのリモートリポジトリをローカルにコピー
+$ git close <リポジトリ名>
+
+
+//リモートリポジトリを新規追加する
+$ git remote add origin https://URL
+
+
+//リモートリポジトリへコミットする（送信する）
+$ git push リモート名 ブランチ名
+$ git push -u origin master  *初めは -uを付けると便利
