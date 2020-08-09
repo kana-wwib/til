@@ -1,0 +1,46 @@
+//ローカルリポジトリ新規作成
+$ git init  >> .git/  .gitディレクトリが作成される
+
+
+//Githubのリモートリポジトリをローカルにコピー
+$ git close <リポジトリ名>
+
+
+//変更をステージに追加する
+$ git add <ファイル名>
+$ git add <ディレクトリ名>
+$ git add .   >>ワークツリー全ての場合（最初とか）
+
+
+//変更をコミットする（記録する）
+$ git commit
+$ git commit -m "<メッセージ>"
+$ git commit -v  （ファイルの変更内容を確認できる）
+
+
+//現在の変更状況を確認
+$ git status
+
+
+//変更したファイルの中身の確認
+git add する前の変更分
+　$ git diff
+　$ git diff <ファイル名>
+git add した後の変更分
+　$ git diff --staged
+ 
+ 
+ //変更履歴を確認
+$ git log
+$ git log --oneline（一行で表示）
+$ git log -p index.html（ファイルの変更分を表示）
+$ git log -n <コミット数>（最近の分だけ表示）
+
+
+//ファイルの削除を記録
+ファイルを削除
+　$ git rm <ファイル名>
+　$ git rm -r <ディレクトリ名>
+ファイルを残したい（gitだけ削除）
+　$ git rm --cached <ファイル名>
+
