@@ -1,0 +1,54 @@
+Inheritance works in a different way 
+
+/************************
+ * Function constructor
+ ************************/
+
+//inheritance works since it's in the prototype property of the function constructor
+//**alway write function constructors with a capital letter**
+
+var Person = function(name, yearOfBirth, job) {
+  this.name = name;
+  this.yearOfBirth = yearOfBirth;
+  this.job = job;
+}
+ 
+Person.prototype.calculateAge = function() {
+  console.log(2016 - this.yearOfBirth);
+};
+ 
+Person.prototype.lastName = 'Smith';
+ 
+var john = new Person('John', 1990, 'teacher');
+ 
+john.calculateAge(); //works!
+console.log(john.lastName); //works!
+
+
+
+/************************
+ * Object.create
+ ************************/
+ 
+var personProto = {
+  calculateAge: function() {
+    console.log(2016 - this.yearOfBirth);
+  }
+};
+
+var john = Object.create(personProto);
+john.name = 'John';
+john.yearOfBirth = 1998;
+john.job = 'teacher';
+
+var jane = Object.create(personProto, {
+  name: { value: 'Jane' },
+  yearOfBirth: { value: 1969 },
+  job: { value: 'designer' }
+});
+
+
+**NOTE**
+The difference between object.create and function construction is 
+object.create → an object inherits directly from first argument 
+function constructor → object inherits from constructor's prototype property 
