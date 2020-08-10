@@ -1,0 +1,46 @@
+
+//リベースで履歴を整えて変更を統合
+$ git rebase ブランチ名
+**リベースは履歴が一直線、マージは履歴が枝分かれ
+
+
+//Pullのマージ型（通常のプル）
+$ git pull リモート名 ブランチ名
+>>マージコミット残る為、マージしたという記録を残したい場合
+
+//Pullのリベース型
+$ git pull --rebase リモート名 ブランチ名
+>>マージコミットが残らない為、Githubの内容を取得したいだけの場合
+
+
+//複数のコミットをリベースでやり直す
+$ git rebase -i コミットID
+（例　直前3つ修正）$ git rebase -i HEAD~3
+→やり直したいcommitをeditする
+→やり直したら実行する
+$ git commit --amend
+→次のコミットへ進む（リベース完了）
+$ git rebase --continue
+
+
+//コミットの並べ替え・削除
+$ git rebase -i HEAD~3（直前3つの場合）
+→該当行のコミットを消す（削除）
+→該当行を入れ替える（並べ替え）
+*NOTE*
+git logとは反対の順番に表示される
+エディター上は、上が最も新しい
+
+
+//コミットをまとめる
+$ git rebase -i HEAD~3（直前3つの場合）
+→該当行をpickからsquashに指定する
+
+
+//コミットを分割する
+$ git rebase -i HEAD~3（直前3つの場合）
+→該当行をpickからeditに指定する
+→コミットエディタを終了
+→$ git reset HEAD^（add前に戻す）
+→それぞれaddとcommitをする
+→$ git rebase --continue
