@@ -52,3 +52,55 @@ var jane = Object.create(personProto, {
 The difference between object.create and function construction is 
 object.create → an object inherits directly from first argument 
 function constructor → object inherits from constructor's prototype property 
+
+
+
+/********************************************************
+ * IIFE (=Immediately Invoke functions expressions)
+ ********************************************************/
+ 
+ (function() {
+  var score = Math.random() * 10;
+  console.log(score >= 5);
+})();
+
+console.log(score); //ERROR can not access from outside of the scope
+
+(function (goodLuck) {
+  var score = Math.random() * 10;
+  console.log(score >= 5 - goodLuck);
+})(5);
+
+
+/*******************************
+ * Bind, call and apply
+ *******************************/
+
+var john = {
+  name: 'John',
+  age: 26,
+  job: 'teacher',
+  presentation: function(style, timeOfDay) {
+    if (style === 'formal') {
+      console.log(~~~ this.name + this.job + this.age + ~~~ )
+    } else if (style === 'friendly') {
+      console.log(~~~ + this.name + this.job + this.age + timeOfDay ~~~)
+    }
+  }
+}
+ 
+var emily = {
+  name: 'Emily',
+  age: 35,
+  job: 'designer',
+};
+Call method  borrowing = arguments as objects
+
+john.presentation.call(emily, 'friendly', 'afternoon');
+Apply method = accepts arguments as an array
+
+john.presentation.apply(emily, ['friendly', 'afternoon']); //Not working this time
+Bind method = preset some arguments
+
+var emilyFormal = john.presentation.bind(emily, 'formal');
+emilyFormal('afternoon');
