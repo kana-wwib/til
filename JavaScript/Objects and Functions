@@ -94,13 +94,28 @@ var emily = {
   age: 35,
   job: 'designer',
 };
-Call method  borrowing = arguments as objects
+// Call method  borrowing = arguments as objects
 
 john.presentation.call(emily, 'friendly', 'afternoon');
-Apply method = accepts arguments as an array
+// Apply method = accepts arguments as an array
 
 john.presentation.apply(emily, ['friendly', 'afternoon']); //Not working this time
-Bind method = preset some arguments
+// Bind method = preset some arguments
 
 var emilyFormal = john.presentation.bind(emily, 'formal');
 emilyFormal('afternoon');
+
+
+//まとめ
+- callback = 高階関数の引数に渡すための関数 
+- 高階関数 = 関数を受け取る関数
+- closure = 外部の変数を取得し処理するオブジェクト
+- Functions returning functions = 変数に格納→引数を与える→変数を使い引数をまとめて渡し呼び出す。
+- IIFF = グローバルに影響せず、ローカルスコープを作ってすぐ実行できる
+[bind/call/apply] 
+*第一引数: thisの値としたいオブジェクトを指定する
+- bind = 新関数を生成し、他の関数と紐付ける
+- call = そのまま実行（新たな関数なし）、第二引数:オブジェクト
+- apply = callと同じだが、第二引数:配列
+
+
